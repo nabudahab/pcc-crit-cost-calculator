@@ -2,9 +2,50 @@
 <html>
     <head>
         <title>Calculator</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <style>
+            p{
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            
+            h1{
+                text-align: center;
+            }   
+
+            div{
+                padding-bottom: 20px;
+            }
+        </style>
     </head>
-    <body>
-        
+    <body style="padding-left : 10px; padding-right : 10px">
+        <h1>Wea Ridge Criterium Cost Calculator</h1>
+        <p>Input any four of the five following values and the fifth value will be calculated, input any
+        three and the last two will be graphed against each other below.</p>
+        <div style="float: left; width: 18%">
+            <label for="cost">Expected Cost</label>
+            <input id="cost" name="cost" type="number">
+        </div>
+        <div style="float: left; width: 18%">
+            <label for="fee">Race Fees</label>
+            <input id="fee" name="fee" type="number">
+        </div>
+        <div style="float: left; width: 18%">
+            <label for="start">Starters</label>
+            <input id="start" name="start" type="number">
+        </div>
+        <div style="float: left; width: 18%">
+            <label for="mar">Net Profit/Loss</label>
+            <input id="mar" name="mar" type="number">
+        </div>
+        <div style="float: left ; width: 18%">
+            <label for="pp">Prize Pool</label>  
+            <input id="pp" name="pp" type="number" max="0">
+        </div>
+        <div style="float: right; width: 10%; margin: auto">
+            <button id="solve" type="button" style="width: 50%" onclick = "solve()">Solve</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.23.0/function-plot.js" integrity="sha512-aoxQJmE2yCEeI7TdpdgGDp2Hr+d2/KvgMaGDE3gvt9eZU6jURMl/3EqUR60flNicTyRQTGl7cV9IZtHgUNUOkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="index.js"></script>
     </body>
 </html>
