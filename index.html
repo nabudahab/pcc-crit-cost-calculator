@@ -1,51 +1,82 @@
 <!DOCTYPE html>
+<!--
+    This html file contains five numerical inputs that are on top of each other with labels next to each. There is a submit button at the bottom of the page.
+    These inputs should only take up the left half of the page. The right half of the page should be an image.
+-->
+
 <html>
     <head>
-        <title>Calculator</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-        <style>
-            p{
-                text-align: center;
-                padding-bottom: 20px;
-            }
-            
-            h1{
-                text-align: center;
-            }   
+        <script src="https://unpkg.com/mathjs@11.2.1/lib/browser/math.js"></script>
+        <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
 
-            div{
-                padding-bottom: 20px;
-            }
-        </style>
+        <title>Wea Ridge Cost Tool</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body style="padding-left : 10px; padding-right : 10px">
-        <h1>Wea Ridge Criterium Cost Calculator</h1>
-        <p>Input any four of the five following values and the fifth value will be calculated, input any
-        three and the last two will be graphed against each other below.</p>
-        <div style="float: left; width: 18%">
-            <label for="cost">Expected Cost</label>
-            <input id="cost" name="cost" type="number">
+    <body class="">
+        <div class="container">
+            <div class="left">
+                <h1>Wea Ridge Criterium Cost Tool</h1>
+                <h5>Use any four of the five inputs to solve for the last, use any of the three to graph the final two against each other.</h5>
+                <div class="input">
+                    <div class="label">
+                        <label for="fee">Race Fees:</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="cost">Expected cost:</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="start">Number of starters:</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="mar">Profit Margin:</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="pp">Prize Pool:</label>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="number" id="fee" name="fee" min="0" step="5">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="number" id="cost" name="cost" min="0" step="5">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="number" id="start" name="start" min="0" step="5">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="number" id="mar" name="mar" min="0" step="5">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="number" id="pp" name="pp" min="0" step="5">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button id="solve" onclick="solve()">Submit</button>
+                </div>
+                <br>
+                <br>
+                <div id="result"></div>
+                
+            </div>
+            <div class="right">
+                <div id="plot"></div>
+            </div>
+
+            <script src="index.js"></script>
         </div>
-        <div style="float: left; width: 18%">
-            <label for="fee">Race Fees</label>
-            <input id="fee" name="fee" type="number">
-        </div>
-        <div style="float: left; width: 18%">
-            <label for="start">Starters</label>
-            <input id="start" name="start" type="number">
-        </div>
-        <div style="float: left; width: 18%">
-            <label for="mar">Net Profit/Loss</label>
-            <input id="mar" name="mar" type="number">
-        </div>
-        <div style="float: left ; width: 18%">
-            <label for="pp">Prize Pool</label>  
-            <input id="pp" name="pp" type="number" max="0">
-        </div>
-        <div style="float: right; width: 10%; margin: auto">
-            <button id="solve" type="button" style="width: 50%" onclick = "solve()">Solve</button>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.23.0/function-plot.js" integrity="sha512-aoxQJmE2yCEeI7TdpdgGDp2Hr+d2/KvgMaGDE3gvt9eZU6jURMl/3EqUR60flNicTyRQTGl7cV9IZtHgUNUOkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="index.js"></script>
     </body>
 </html>
